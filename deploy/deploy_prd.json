@@ -1,0 +1,32 @@
+{
+    "bigquery_pre": [
+    ],
+  "bigquery_ddl": [
+      "/source/silver/silver_transaction/schema/ddl/ddl.sql",
+      "/source/gold/gold_ba/schema/ddl/ddl.sql",
+      "/source/operation/operation/schema/ddl/ddl.sql",
+      "/source/operation/quality/schema/ddl/ddl.sql",
+      "/source/silver/silver_transaction/product/ddl/01_create_table.sql",
+      "/source/silver/silver_transaction/transaction/ddl/01_create_table.sql",
+      "/source/gold/gold_ba/ba_sales/ddl/01_create_table.sql",
+
+      "/source/operation/quality/quantitative/ddl/01_create_table.sql",
+      "/source/operation/operation/tables/ddl/01_create_table.sql"
+
+    ],
+    "bigquery_sp": [
+        "/source/silver/silver_transaction/product/sp/sp_load_product.sql",
+        "/source/silver/silver_transaction/transaction/sp/sp_load_transaction.sql",
+        "/source/gold/gold_ba/ba_sales/sp/sp_load_ba_sales.sql",
+        "/source/gold/gold_ba/ba_sales/sp/sp_load_ba_sales.sql",
+        "/source/gold/gold_ba/ba_sales/sp/sp_load_ba_sales.sql" ,
+        "/source/operation/quality/quantitative/sp/sp_load_quantitative.sql"
+
+    ],
+    "bigquery_dml": [
+    ],
+    "function": [
+    ],
+    "orchestration": [
+    ]
+  }
