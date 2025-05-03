@@ -1,0 +1,27 @@
+steps:
+  # Step 01: Leer lista_sp.json y ejecutar los scripts listados en el nodo 'proyectos'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        git clone https://github.com/jeisonegiraldo/dp-data-lake.git
+        cd dp-data-lake
+        chmod +x ./build/bash/bigquery_ddl.sh
+        chmod +x ./build/bash/bigquery_sp.sh
+        chmod +x ./build/bash/bigquery_dml.sh
+        chmod +x ./build/bash/workflow.sh
+  # Step 02: Leer lista_sp.json y ejecutar los scripts listados en el nodo 'proyectos'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: [ '-c', './dp-data-lake/build/bash/bigquery_ddl.sh prd' ]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: [ '-c', './dp-data-lake/build/bash/bigquery_sp.sh prd' ]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: [ '-c', './dp-data-lake/build/bash/bigquery_dml.sh prd' ]
+# Opcional: Sustituciones de variables de entorno
+
+options:
+  logging: CLOUD_LOGGING_ONLY

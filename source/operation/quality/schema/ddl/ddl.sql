@@ -1,0 +1,1 @@
+CREATE SCHEMA IF NOT EXISTS `premium-guide-410714.quality`;
