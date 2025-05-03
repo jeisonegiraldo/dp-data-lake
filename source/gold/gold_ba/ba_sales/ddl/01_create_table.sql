@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS`premium-guide-410714.gold_ba.ba_sales`
+CREATE TABLE IF NOT EXISTS`data-lake-arch0.gold_ba.ba_sales`
 (
   user_id INT64,
   process_date DATE,
